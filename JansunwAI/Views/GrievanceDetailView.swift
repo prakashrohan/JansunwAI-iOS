@@ -63,7 +63,7 @@ struct GrievanceDetailView: View {
                             Color.blue.opacity(0.8)
                         )
                         .foregroundColor(.white)
-                        .cornerRadius(12)
+                        .cornerRadius(30)
                         .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 3)
                 }
                 .padding(.top, 20)

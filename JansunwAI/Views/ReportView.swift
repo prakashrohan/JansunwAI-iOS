@@ -1,12 +1,17 @@
 import SwiftUI
 import CoreLocation
 import PhotosUI
+import Lottie
 
 struct ReportView: View {
     let grievance: Grievance
 
     @State private var remarks: String = ""
     @State private var status: String
+    @Environment(\.dismiss) private var dismiss
+
+    @State private var showSuccess = false
+
 
     init(grievance: Grievance) {
         self.grievance = grievance
@@ -120,6 +125,7 @@ struct ReportView: View {
                 }
 
             }
+            
             .navigationTitle("Create Report")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -140,13 +146,31 @@ struct ReportView: View {
                 ))
             }
         }
+        .overlay(
+            Group {
+                if showSuccess {
+                    ZStack {
+                        Color.black.opacity(0.5).ignoresSafeArea()
+                        VStack {
+                            LottieView(name: "tick", loopMode: .playOnce)
+                                .frame(width: 150, height: 150)
+                            Text("Report Submitted")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .padding(.top)
+                        }
+                    }
+                }
+            }
+        )
+
         .onAppear {
             locationManager.requestLocation()
         }
     }
 
     private func submitReport() {
-        // Convert each UIImage to JPEG Data, then send:
+        
         let imageDatas = images.compactMap { $0.jpegData(compressionQuality: 0.8) }
         print("Submitting report:")
         print(" • Remarks: \(remarks)")
@@ -155,8 +179,16 @@ struct ReportView: View {
         if let loc = locationManager.location {
             print(" • Location: \(loc.latitude), \(loc.longitude)")
         }
+
        
+        showSuccess = true
+
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            dismiss()
+        }
     }
+
 }
 
 

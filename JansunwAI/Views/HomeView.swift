@@ -7,13 +7,7 @@
 
 import SwiftUI
 
-struct grievance: Identifiable {
-    let id = UUID()
-    let title: String
-    let description: String
-    let status: String
-    let lastUpdated: Date
-}
+
 
 struct HomeView: View {
     @State private var grievances: [Grievance] = [

@@ -6,6 +6,23 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		87A512532DC1875C000755EA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 87A512522DC1875C000755EA /* Lottie */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		87A5124A2DC18670000755EA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		8724A3632DB0D93C0091D269 /* JansunwAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JansunwAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87A512532DC1875C000755EA /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				8724A3652DB0D93C0091D269 /* JansunwAI */,
+				87A512502DC1872A000755EA /* Frameworks */,
 				8724A3642DB0D93C0091D269 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -58,6 +77,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		87A512502DC1872A000755EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -68,6 +94,7 @@
 				8724A35F2DB0D93C0091D269 /* Sources */,
 				8724A3602DB0D93C0091D269 /* Frameworks */,
 				8724A3612DB0D93C0091D269 /* Resources */,
+				87A5124A2DC18670000755EA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -78,6 +105,7 @@
 			);
 			name = JansunwAI;
 			packageProductDependencies = (
+				87A512522DC1875C000755EA /* Lottie */,
 			);
 			productName = JansunwAI;
 			productReference = 8724A3632DB0D93C0091D269 /* JansunwAI.app */;
@@ -108,6 +136,7 @@
 			mainGroup = 8724A35A2DB0D93C0091D269;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
+				87A512512DC1875C000755EA /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8724A3642DB0D93C0091D269 /* Products */;
@@ -351,6 +380,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		87A512512DC1875C000755EA /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		87A512522DC1875C000755EA /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 87A512512DC1875C000755EA /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8724A35B2DB0D93C0091D269 /* Project object */;
 }
